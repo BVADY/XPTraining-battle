@@ -33,6 +33,16 @@ public class Soldier {
         return weapon;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Soldier fight(Soldier opponent) {
 
         if (this.getWeapon().getDamage() < opponent.getWeapon().getDamage()) {
@@ -41,4 +51,6 @@ public class Soldier {
 
         return this;
     }
+
+
 }

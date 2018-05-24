@@ -12,18 +12,23 @@ public class Headquarters implements IHeadquarters {
 
     @Override
     public int reportEnlistment(Soldier soldier, ArrayList<Soldier> army) {
-        int id = 0;
         Random r = new Random();
         int random = r.nextInt(56481);
 
+        for (Soldier s : army) {
+            if (random == s.getId()) {
+                return this.reportEnlistment(soldier, army);
+            }
+        }
 
-        return id;
+
+        return random;
     }
 
 
     @Override
-    public void reportCasualty(int soldierId) {
-        throw new UnsupportedOperationException("implement me (after test)");
+    public String reportCasualty(int soldierId) {
+        return soldierId + " dies";
     }
 
 

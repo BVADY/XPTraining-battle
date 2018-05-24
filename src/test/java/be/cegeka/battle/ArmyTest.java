@@ -1,6 +1,7 @@
 package be.cegeka.battle;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -28,5 +29,28 @@ public class ArmyTest {
 
         assertEquals("soldier1", army.getSoldiersInArmy().get(0).getName());
     }
+
+    public void testSoldierIdFromHQ() {
+        Army army = new Army();
+        Soldier soldier = new Soldier("soldaat");
+
+        army.addSoldierToArmy(soldier);
+        assertNotNull(soldier.getId());
+
+    }
+
+    public void testWar() {
+        Army army = new Army();
+
+
+    }
+
+    public void testDeathSoldier() {
+        Soldier soldier = new Soldier("soldaat");
+        Soldier soldier2 = new Soldier("soldaat");
+
+
+    }
+
 
 }

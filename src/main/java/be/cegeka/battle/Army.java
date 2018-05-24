@@ -18,12 +18,26 @@ public class Army {
     }
 
     public void addSoldierToArmy(Soldier soldier) {
-        hq.reportEnlistment(soldier, soldiersInArmy);
+        soldier.setId(hq.reportEnlistment(soldier, soldiersInArmy));
         soldiersInArmy.add(soldier);
     }
 
     public boolean hasSoldier(Soldier soldier) {
         return soldiersInArmy.contains(soldier);
+    }
+
+    public String war(Army opponents) {
+
+        Soldier ourFrontMan = this.getSoldiersInArmy().get(0);
+        Soldier enemyFrontMan = opponents.getSoldiersInArmy().get(0);
+
+        Soldier winner = ourFrontMan.fight(enemyFrontMan);
+
+        if (winner.equals(ourFrontMan)) {
+            return "";
+        }
+
+        return hq.reportCasualty(ourFrontMan.getId());
     }
 
 
