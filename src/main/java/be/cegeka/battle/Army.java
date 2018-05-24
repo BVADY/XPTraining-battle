@@ -34,7 +34,7 @@ public class Army {
         Soldier winner = ourFrontMan.fight(enemyFrontMan);
 
         if (winner.equals(ourFrontMan)) {
-            return "";
+            return hq.reportVictory(soldiersInArmy.size());
         }
 
         return hq.reportCasualty(ourFrontMan.getId());

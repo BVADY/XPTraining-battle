@@ -39,12 +39,39 @@ public class ArmyTest {
 
     }
 
+    @Test
     public void testWar() {
         Army army = new Army();
+        Army army2 = new Army();
+        Soldier soldier = new Soldier("soldaat");
+        Soldier soldier2 = new Soldier("soldaat");
+        soldier2.setWeapon(new Axe());
 
+        army.addSoldierToArmy(soldier);
+        army2.addSoldierToArmy(soldier2);
+
+        assertEquals(army.war(army2), soldier.getId() + " dies");
 
     }
 
+
+    @Test
+    public void testWinningSoldier() {
+        Army army = new Army();
+        Army army2 = new Army();
+        Soldier soldier = new Soldier("soldaat");
+        Soldier soldier2 = new Soldier("soldaat");
+        soldier.setWeapon(new Axe());
+
+        army.addSoldierToArmy(soldier);
+        army2.addSoldierToArmy(soldier2);
+
+        assertEquals(army.war(army2), army.getSoldiersInArmy().size() + " left");
+
+    }
+
+
+    @Test
     public void testDeathSoldier() {
         Soldier soldier = new Soldier("soldaat");
         Soldier soldier2 = new Soldier("soldaat");

@@ -8,7 +8,7 @@ public interface IHeadquarters {
 
     String reportCasualty(int soldierId);
 
-    void reportVictory(int remainingNumberOfSoldiers);
+    String reportVictory(int remainingNumberOfSoldiers);
 
 
 }

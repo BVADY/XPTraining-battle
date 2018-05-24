@@ -33,8 +33,8 @@ public class Headquarters implements IHeadquarters {
 
 
     @Override
-    public void reportVictory(int remainingNumberOfSoldiers) {
-        throw new UnsupportedOperationException("implement me (after test)");
+    public String reportVictory(int remainingNumberOfSoldiers) {
+        return remainingNumberOfSoldiers + " left";
     }
 
 
