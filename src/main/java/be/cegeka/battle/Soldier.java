@@ -49,13 +49,13 @@ public class Soldier {
 
         if (this.getWeapon().getEffectiveAgainst() != null) {
 
-            if (this.getWeapon().getEffectiveAgainst().getClass().equals(opponent.getWeapon().getClass())) {
+            if (this.getWeapon().getEffectiveAgainst().equals(opponent.getWeapon().getClass())) {
                 ourBonus = 3;
             }
         }
 
         if (opponent.getWeapon().getEffectiveAgainst() != null) {
-            if (opponent.getWeapon().getEffectiveAgainst().getClass().equals(this.getWeapon().getClass())) {
+            if (opponent.getWeapon().getEffectiveAgainst().equals(this.getWeapon().getClass())) {
                 enemyBonus = 3;
             }
         }
