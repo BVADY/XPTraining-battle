@@ -7,6 +7,9 @@ public class Army {
 
     private List<Soldier> soldiersInArmy = new ArrayList<Soldier>();
 
+    private Headquarters hq = new Headquarters();
+
+
     public List<Soldier> getSoldiersInArmy() {
         return soldiersInArmy;
     }
@@ -16,6 +19,7 @@ public class Army {
     }
 
     public void addSoldierToArmy(Soldier soldier) {
+        hq.reportEnlistment(soldier.getName());
         soldiersInArmy.add(soldier);
     }
 

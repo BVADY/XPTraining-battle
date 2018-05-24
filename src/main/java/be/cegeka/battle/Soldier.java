@@ -10,6 +10,8 @@ public class Soldier {
 
     private Weapon weapon = new BareFist();
 
+    private int id;
+
     public Soldier() {
     }
 
