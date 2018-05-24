@@ -30,6 +30,7 @@ public class ArmyTest {
         assertEquals("soldier1", army.getSoldiersInArmy().get(0).getName());
     }
 
+    @Test
     public void testSoldierIdFromHQ() {
         Army army = new Army();
         Soldier soldier = new Soldier("soldaat");
@@ -39,43 +40,27 @@ public class ArmyTest {
 
     }
 
+
     @Test
-    public void testWar() {
+    public void testSoldierDies() {
         Army army = new Army();
-        Army army2 = new Army();
         Soldier soldier = new Soldier("soldaat");
         Soldier soldier2 = new Soldier("soldaat");
-        soldier2.setWeapon(new Axe());
+        Soldier soldier3 = new Soldier("soldaat");
 
         army.addSoldierToArmy(soldier);
-        army2.addSoldierToArmy(soldier2);
+        army.addSoldierToArmy(soldier2);
+        army.addSoldierToArmy(soldier3);
 
-        assertEquals(army.war(army2), soldier.getId() + " dies");
-
-    }
-
-
-    @Test
-    public void testWinningSoldier() {
-        Army army = new Army();
         Army army2 = new Army();
-        Soldier soldier = new Soldier("soldaat");
-        Soldier soldier2 = new Soldier("soldaat");
-        soldier.setWeapon(new Axe());
+        Soldier soldier4 = new Soldier("soldaat");
+        Soldier soldier5 = new Soldier("soldaat");
+        Soldier soldier6 = new Soldier("soldaat");
 
-        army.addSoldierToArmy(soldier);
-        army2.addSoldierToArmy(soldier2);
+        army2.addSoldierToArmy(soldier4);
+        army2.addSoldierToArmy(soldier5);
 
-        assertEquals(army.war(army2), army.getSoldiersInArmy().size() + " left");
-
-    }
-
-
-    @Test
-    public void testDeathSoldier() {
-        Soldier soldier = new Soldier("soldaat");
-        Soldier soldier2 = new Soldier("soldaat");
-
+        assertEquals(army.war(army2), soldier4.getId() + " dies");
 
     }
 

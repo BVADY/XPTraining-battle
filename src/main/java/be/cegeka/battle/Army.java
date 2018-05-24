@@ -26,7 +26,16 @@ public class Army {
         return soldiersInArmy.contains(soldier);
     }
 
+
     public String war(Army opponents) {
+
+        if (this.getSoldiersInArmy().size() < 1) {
+            return hq.reportVictory(opponents.getSoldiersInArmy().size());
+        }
+        if (opponents.getSoldiersInArmy().size() < 1) {
+            return hq.reportVictory(this.getSoldiersInArmy().size());
+        }
+
 
         Soldier ourFrontMan = this.getSoldiersInArmy().get(0);
         Soldier enemyFrontMan = opponents.getSoldiersInArmy().get(0);
@@ -34,10 +43,14 @@ public class Army {
         Soldier winner = ourFrontMan.fight(enemyFrontMan);
 
         if (winner.equals(ourFrontMan)) {
-            return hq.reportVictory(soldiersInArmy.size());
+            opponents.soldiersInArmy.remove(enemyFrontMan);
+            return hq.reportCasualty(enemyFrontMan.getId());
         }
 
+        this.soldiersInArmy.remove(ourFrontMan);
         return hq.reportCasualty(ourFrontMan.getId());
+
+
     }
 
 
