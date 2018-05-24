@@ -3,8 +3,9 @@ package be.cegeka.battle;
 
 public class Axe extends Weapon {
 
+
     public Axe() {
-        super(3);
+        super(3, Spear.class);
     }
 
 

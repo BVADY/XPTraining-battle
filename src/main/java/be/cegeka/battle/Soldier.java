@@ -44,8 +44,17 @@ public class Soldier {
     }
 
     public Soldier fight(Soldier opponent) {
+        int ourBonus = 0;
+        int enemyBonus = 0;
 
-        if (this.getWeapon().getDamage() < opponent.getWeapon().getDamage()) {
+        if (this.getWeapon().getEffectiveAgainst().equals(opponent.getWeapon().getClass())) {
+            ourBonus = 3;
+        }
+        if (opponent.getWeapon().getEffectiveAgainst().equals(this.getWeapon().getClass())) {
+            enemyBonus = 3;
+        }
+
+        if (this.getWeapon().getDamage() + ourBonus < opponent.getWeapon().getDamage() + enemyBonus) {
 
             return opponent;
         }

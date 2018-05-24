@@ -122,5 +122,18 @@ public class SoldierTest {
 
     }
 
+    // ZWAARD VS AXE
+    @Test
+    public void testBonusFight() {
+        Soldier sol1 = new Soldier();
+        Soldier sol2 = new Soldier();
+        sol1.setWeapon(new Sword());
+        sol2.setWeapon(new Axe());
+
+
+        assertEquals(sol1.fight(sol2), sol1);
+
+    }
+
 
 }
