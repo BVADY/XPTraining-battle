@@ -1,30 +1,30 @@
 package be.cegeka.battle;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Army {
 
-    private List<Soldier> soldiersInArmy = new ArrayList<Soldier>();
+    private ArrayList<Soldier> soldiersInArmy = new ArrayList<Soldier>();
 
     private Headquarters hq = new Headquarters();
 
 
-    public List<Soldier> getSoldiersInArmy() {
+    public ArrayList<Soldier> getSoldiersInArmy() {
         return soldiersInArmy;
     }
 
-    public void setSoldiersInArmy(List<Soldier> soldiersInArmy) {
+    public void setSoldiersInArmy(ArrayList<Soldier> soldiersInArmy) {
         this.soldiersInArmy = soldiersInArmy;
     }
 
     public void addSoldierToArmy(Soldier soldier) {
-        hq.reportEnlistment(soldier.getName());
+        hq.reportEnlistment(soldier);
         soldiersInArmy.add(soldier);
     }
 
     public boolean hasSoldier(Soldier soldier) {
         return soldiersInArmy.contains(soldier);
     }
+
 
 }

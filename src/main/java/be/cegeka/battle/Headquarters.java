@@ -1,5 +1,6 @@
 package be.cegeka.battle;
 
+import java.util.Random;
 
 public class Headquarters implements IHeadquarters {
 
@@ -9,8 +10,12 @@ public class Headquarters implements IHeadquarters {
 
 
     @Override
-    public int reportEnlistment(String soldierName) {
-        throw new UnsupportedOperationException("implement me (after test)");
+    public int reportEnlistment(Soldier soldier) {
+        int id;
+        Random r = new Random();
+        int random = r.nextInt(56481);
+
+        return id;
     }
 
 
