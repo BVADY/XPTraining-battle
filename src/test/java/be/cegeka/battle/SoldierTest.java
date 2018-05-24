@@ -91,5 +91,36 @@ public class SoldierTest {
         assertEquals(weapon.getDamage(), 1);
     }
 
+    @Test
+    public void testFightSoldierStronger() {
+        Soldier sol1 = new Soldier();
+        Soldier sol2 = new Soldier();
+        sol1.setWeapon(new Axe());
+
+        assertEquals(sol1.fight(sol2), sol1);
+
+    }
+
+
+    @Test
+    public void testFightOpponentStronger() {
+        Soldier sol1 = new Soldier();
+        Soldier sol2 = new Soldier();
+        sol2.setWeapon(new Axe());
+
+        assertEquals(sol1.fight(sol2), sol2);
+
+
+    }
+
+    @Test
+    public void testEqualFight() {
+        Soldier sol1 = new Soldier();
+        Soldier sol2 = new Soldier();
+
+        assertEquals(sol1.fight(sol2), sol1);
+
+    }
+
 
 }
