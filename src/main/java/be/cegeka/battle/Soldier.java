@@ -8,6 +8,10 @@ public class Soldier {
 
     private String name;
 
+    private Weapon weapon = new BareFist();
+
+    public Soldier() {
+    }
 
     public Soldier(String name) {
         Validate.isTrue(isNotBlank(name));
@@ -19,5 +23,20 @@ public class Soldier {
         return this.name;
     }
 
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
 
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public Soldier fight(Soldier opponent) {
+
+        if (this.getWeapon().getDamage() < opponent.getWeapon().getDamage()) {
+            return opponent;
+        }
+
+        return this;
+    }
 }
