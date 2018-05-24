@@ -18,7 +18,7 @@ public class Army {
     }
 
     public void addSoldierToArmy(Soldier soldier) {
-        hq.reportEnlistment(soldier);
+        hq.reportEnlistment(soldier, soldiersInArmy);
         soldiersInArmy.add(soldier);
     }
 

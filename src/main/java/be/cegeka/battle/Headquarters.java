@@ -1,5 +1,6 @@
 package be.cegeka.battle;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Headquarters implements IHeadquarters {
@@ -10,10 +11,11 @@ public class Headquarters implements IHeadquarters {
 
 
     @Override
-    public int reportEnlistment(Soldier soldier) {
-        int id;
+    public int reportEnlistment(Soldier soldier, ArrayList<Soldier> army) {
+        int id = 0;
         Random r = new Random();
         int random = r.nextInt(56481);
+
 
         return id;
     }
